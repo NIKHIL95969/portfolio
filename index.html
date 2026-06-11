@@ -1,0 +1,587 @@
+<!DOCTYPE html><html class="dark scroll-smooth" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Nikhil Singh | Portfolio</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&amp;family=Space+Grotesk:wght@300..700&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-highest": "#2f3445",
+                    "surface-dim": "#0d1322",
+                    "surface-container": "#191f2f",
+                    "on-tertiary": "#003919",
+                    "inverse-surface": "#dde2f8",
+                    "error-container": "#93000a",
+                    "surface-variant": "#2f3445",
+                    "secondary-fixed-dim": "#47d6ff",
+                    "surface": "#0d1322",
+                    "on-tertiary-container": "#dcffdf",
+                    "tertiary": "#66dd8b",
+                    "on-primary-fixed": "#001550",
+                    "background": "#0d1322",
+                    "inverse-primary": "#004ee8",
+                    "primary": "#b6c4ff",
+                    "on-tertiary-fixed-variant": "#005227",
+                    "secondary-fixed": "#b6ebff",
+                    "on-secondary-fixed": "#001f28",
+                    "surface-container-high": "#242a3a",
+                    "on-secondary": "#003543",
+                    "inverse-on-surface": "#2a3040",
+                    "on-primary": "#002780",
+                    "surface-bright": "#33394a",
+                    "on-surface-variant": "#c3c5d8",
+                    "surface-container-lowest": "#080e1d",
+                    "primary-fixed": "#dce1ff",
+                    "on-background": "#dde2f8",
+                    "on-surface": "#dde2f8",
+                    "error": "#ffb4ab",
+                    "on-tertiary-fixed": "#00210c",
+                    "primary-fixed-dim": "#b6c4ff",
+                    "on-secondary-container": "#00566a",
+                    "on-primary-fixed-variant": "#003ab3",
+                    "on-error": "#690005",
+                    "surface-container-low": "#151b2b",
+                    "tertiary-container": "#008241",
+                    "on-error-container": "#ffdad6",
+                    "tertiary-fixed": "#83fba5",
+                    "outline-variant": "#434656",
+                    "tertiary-fixed-dim": "#66dd8b",
+                    "on-secondary-fixed-variant": "#004e60",
+                    "primary-container": "#2962ff",
+                    "outline": "#8d90a2",
+                    "secondary-container": "#00d2ff",
+                    "surface-tint": "#b6c4ff",
+                    "on-primary-container": "#f7f5ff",
+                    "secondary": "#a5e7ff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": [
+                            "Space Grotesk"
+                    ],
+                    "body": [
+                            "Inter"
+                    ],
+                    "label": [
+                            "Inter"
+                    ]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-nav {
+            background-color: rgba(13, 19, 34, 0.6);
+            backdrop-filter: blur(30px);
+        }
+        .text-gradient {
+            background: linear-gradient(135deg, #b6c4ff 0%, #2962ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Motion effects */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        @media (prefers-reduced-motion: reduce) {
+            .reveal {
+                transition: none !important;
+                transform: none !important;
+                opacity: 1 !important;
+            }
+            .hover-lift { transform: none !important; }
+            .shimmer { animation: none !important; }
+            .magnetic-btn { animation: none !important; }
+        }
+
+        .hover-lift {
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+        }
+        .hover-lift:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px -12px rgba(182, 196, 255, 0.2);
+        }
+
+        .shimmer {
+            position: relative;
+            overflow: hidden;
+        }
+        .shimmer::after {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                45deg,
+                transparent 0%,
+                rgba(255, 255, 255, 0.05) 45%,
+                rgba(255, 255, 255, 0.1) 50%,
+                rgba(255, 255, 255, 0.05) 55%,
+                transparent 100%
+            );
+            transform: translateX(-100%);
+            transition: transform 0.6s ease;
+        }
+        .shimmer:hover::after {
+            transform: translateX(100%);
+        }
+
+        @keyframes magnetic-pulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(182, 196, 255, 0.4); }
+            70% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(182, 196, 255, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(182, 196, 255, 0); }
+        }
+        .magnetic-btn:active {
+            animation: magnetic-pulse 0.4s ease-out;
+        }
+
+        .project-img-reveal {
+            clip-path: inset(100% 0 0 0);
+            transition: clip-path 1.2s cubic-bezier(0.77, 0, 0.175, 1);
+        }
+        .project-img-reveal.active {
+            clip-path: inset(0 0 0 0);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container overflow-x-hidden">
+<!-- Fixed Shader Background -->
+<div class="fixed inset-0 z-[-1] pointer-events-none opacity-40">
+    {{DATA:ANIMATION:ANIMATION_1}}
+</div>
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#0d1322]/60 backdrop-blur-3xl border-b border-white/5">
+<div class="flex justify-between items-center max-w-7xl mx-auto px-8 h-20">
+<span class="text-xl font-bold tracking-tighter text-[#dde2f8] font-headline uppercase">NIKHIL SINGH</span>
+<div class="hidden md:flex items-center gap-8 font-headline tracking-tight">
+<a class="nav-link text-[#b6c4ff] border-b-2 border-[#2962ff] pb-1 transition-colors duration-300" href="#home" data-section="home">Home</a>
+<a class="nav-link text-[#dde2f8]/70 hover:text-[#b6c4ff] transition-colors duration-300" href="#experience" data-section="experience">Experience</a>
+<a class="nav-link text-[#dde2f8]/70 hover:text-[#b6c4ff] transition-colors duration-300" href="#projects" data-section="projects">Projects</a>
+<a class="nav-link text-[#dde2f8]/70 hover:text-[#b6c4ff] transition-colors duration-300" href="#skills" data-section="skills">Skills</a>
+<a class="nav-link text-[#dde2f8]/70 hover:text-[#b6c4ff] transition-colors duration-300" href="#contact" data-section="contact">Contact</a>
+</div>
+<a href="https://drive.google.com/file/d/1h_LXMNbcnxRTUtjQvkWrMOuT2OMymjwY/view?usp=sharing" target="_blank" class="magnetic-btn bg-gradient-to-br from-primary to-primary-container text-on-primary-fixed px-6 py-2 rounded-lg font-headline font-bold scale-95 hover:scale-100 duration-200 shadow-lg shadow-primary/20 inline-block">Resume</a>
+</div>
+</nav>
+<main class="relative">
+<!-- Hero Section -->
+<section class="min-h-screen flex flex-col justify-center px-8 max-w-7xl mx-auto pt-20" id="home">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+<div class="md:col-span-8 space-y-6 reveal active">
+<div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-surface-container-low border border-outline-variant/10 text-tertiary">
+<span class="w-2 h-2 rounded-full bg-tertiary animate-pulse"></span>
+<span class="text-sm font-label uppercase tracking-widest font-bold">Open for Collaboration</span>
+</div>
+<h1 class="text-6xl md:text-8xl font-headline font-bold leading-none tracking-tighter">
+                    Building <span class="text-gradient">Architectural</span> <br> Digital Solutions.
+                </h1>
+<p class="text-lg md:text-xl text-on-surface-variant max-w-2xl leading-relaxed">
+                    Hi, I'm <span class="text-on-surface font-bold">Nikhil Singh</span>. Associate Data Engineer @ Egen AI&nbsp;</p><div><p class="">Building scalable data solutions, ETL pipelines, and cloud-native applications. Experienced in Data Engineering, Cloud Technologies, Full-Stack Development, and AI-driven solutions.</p></div><p class=""></p>
+<div class="flex flex-wrap gap-4 pt-4">
+<a class="inline-flex items-center gap-2 bg-gradient-to-br from-primary to-primary-container text-on-primary-fixed px-8 py-4 rounded-lg font-headline font-bold shadow-2xl transition-transform active:scale-95" href="https://github.com/nikhil95969" target="_blank">
+                            View GitHub
+                            <span class="material-symbols-outlined text-xl">terminal</span>
+</a>
+<a class="magnetic-btn inline-flex items-center gap-2 border border-outline-variant/20 hover:bg-primary/10 text-on-surface px-8 py-4 rounded-lg font-headline font-bold transition-all" href="https://www.linkedin.com/in/nikhil-singh-79b286228" target="_blank">
+                        LinkedIn
+                        <span class="material-symbols-outlined text-xl text-[#2962ff]">open_in_new</span>
+</a>
+</div>
+</div>
+<div class="md:col-span-4 hidden md:block reveal active" style="transition-delay: 200ms;">
+<div class="aspect-square rounded-3xl overflow-hidden bg-surface-container-low border border-outline-variant/10 p-4 hover-lift">
+<img alt="Technical hardware interface" class="w-full h-full object-cover rounded-2xl grayscale hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHkjIdRFIwmCnJ1varnOAe3xeFTUjixiy_6-oxbl0X5Buegpa3aAyl6Ec90bAzLKgI0X_qAdkRXWB39CGRvJnnaKfl-bgz3hhlETOhtsfZzCRlCTgBBCZsgAGlhEQoqw6LtfOVvwsKHFJxSdAjSA__Eyn9xJbEsjyWbVSJIPvKiiqV4qRGGjNCKfA-z8vRHuzYAGFwqkAO8E6X6htaxSBB9VJcNli7n45oT9APyTHn_N9rdwPXJWrS4_ALb3d6bbJVngNFKDcbyqI">
+</div>
+</div>
+</div>
+<!-- Quick Stats -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-24">
+<div class="reveal p-8 rounded-2xl bg-surface-container-low border-b-2 border-primary/20 hover-lift active" style="transition-delay: 100ms;">
+<span class="text-4xl font-headline font-bold text-primary block">3+</span>
+<span class="text-on-surface-variant font-label uppercase tracking-wider text-sm">Professional Internships</span>
+</div>
+<div class="reveal p-8 rounded-2xl bg-surface-container-low border-b-2 border-tertiary/20 hover-lift active" style="transition-delay: 200ms;">
+<span class="text-4xl font-headline font-bold text-tertiary block">5+</span>
+<span class="text-on-surface-variant font-label uppercase tracking-wider text-sm">Production Projects</span>
+</div>
+<div class="reveal p-8 rounded-2xl bg-surface-container-low border-b-2 border-secondary/20 hover-lift active" style="transition-delay: 300ms;">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary">cloud</span>
+<span class="text-xl font-headline font-bold text-on-surface">GCP Certified</span>
+</div>
+<span class="text-on-surface-variant font-label uppercase tracking-wider text-sm">Associate Cloud Engineer</span>
+</div>
+</div>
+</section>
+<!-- Experience Section -->
+<section class="py-32 bg-surface-container-low/50" id="experience">
+<div class="max-w-7xl mx-auto px-8">
+<div class="mb-16 reveal active">
+<span class="text-primary font-headline font-bold tracking-widest uppercase text-sm block mb-2">The Career Path</span>
+<h2 class="text-5xl font-headline font-bold">Experience History</h2>
+</div>
+<div class="space-y-6">
+<!-- 1. Data Engineer | EGEN -->
+<div class="reveal group relative grid md:grid-cols-12 gap-8 p-10 rounded-2xl hover:bg-surface-container-highest transition-all duration-300 hover-lift active">
+<div class="md:col-span-3">
+<span class="text-on-surface-variant font-headline font-bold text-xl block">Nov 2025 - Present</span>
+<span class="text-tertiary font-label text-sm uppercase tracking-widest flex items-center gap-2 mt-2">
+<span class="material-symbols-outlined text-sm">location_on</span> Hyderabad
+                        </span>
+</div>
+<div class="md:col-span-9 space-y-4">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="text-2xl font-headline font-bold text-primary group-hover:text-primary-fixed transition-colors">Data Engineer</h3>
+<span class="text-on-surface-variant text-lg">EGEN (formerly SpringML)</span>
+</div>
+<span class="bg-tertiary/10 text-tertiary px-3 py-1 rounded text-xs font-bold uppercase tracking-widest">Active</span>
+</div>
+<ul class="text-on-surface-variant leading-relaxed text-lg list-disc list-outside ml-5 space-y-2">
+<li class="">Architecting and maintaining scalable ETL pipelines utilizing Python, Google Cloud Dataflow, and Apache Airflow to curate, transform, and load high-quality data into columnar databases (BigQuery).</li>
+<li class="">Proactively identifying and resolving data quality issues, implementing robust validation checks within data workflows to ensure data accuracy and completeness.</li>
+<li class="">Collaborating cross-functionally in an Agile/Scrum environment, engaging with stakeholders to extract business requirements and apply domain-driven design to data models.</li>
+<li class="">Designing AI-driven solutions leveraging Google ADK and Vertex AI, and implementing CI/CD pipelines using Cloud Build and Docker for streamlined deployments.</li>
+</ul>
+<div class="flex flex-wrap gap-2 pt-2">
+<span class="shimmer px-3 py-1 bg-surface-container text-primary text-xs rounded-md font-bold">Python</span>
+<span class="shimmer px-3 py-1 bg-surface-container text-primary text-xs rounded-md font-bold">GCP Dataflow</span>
+<span class="shimmer px-3 py-1 bg-surface-container text-primary text-xs rounded-md font-bold">Apache Airflow</span>
+<span class="shimmer px-3 py-1 bg-surface-container text-primary text-xs rounded-md font-bold">BigQuery</span>
+<span class="shimmer px-3 py-1 bg-surface-container text-primary text-xs rounded-md font-bold">Vertex AI</span>
+<span class="shimmer px-3 py-1 bg-surface-container text-primary text-xs rounded-md font-bold">Docker</span>
+</div>
+</div>
+</div>
+<!-- 2. Application Engineering Intern | EGEN -->
+<div class="reveal group relative grid md:grid-cols-12 gap-8 p-10 rounded-2xl hover:bg-surface-container-highest transition-all duration-300 hover-lift active">
+<div class="md:col-span-3">
+<span class="text-on-surface-variant font-headline font-bold text-xl block">April 2025 - Oct 2025</span>
+<span class="text-on-surface-variant font-label text-sm uppercase tracking-widest flex items-center gap-2 mt-2">
+<span class="material-symbols-outlined text-sm">location_on</span> Hyderabad
+                        </span>
+</div>
+<div class="md:col-span-9 space-y-4">
+<h3 class="text-2xl font-headline font-bold text-primary group-hover:text-primary-fixed transition-colors">Application Engineering Intern</h3>
+<span class="text-on-surface-variant text-lg block -mt-2">EGEN</span>
+<ul class="text-on-surface-variant leading-relaxed text-lg list-disc list-outside ml-5 space-y-2">
+<li class="">Developed cloud-native applications using GCP services including Cloud Run, App Engine, and Cloud Functions.</li>
+<li class="">Built responsive front-end interfaces with Angular 18+ and implemented secure backend APIs using FastAPI and Firebase Authentication.</li>
+<li class="">Gained hands-on experience with AI engineering through Vertex AI, Gemini Models, and implementing prompt engineering techniques for industry solutions.</li>
+</ul>
+<div class="flex flex-wrap gap-2 pt-2">
+<span class="shimmer px-3 py-1 bg-surface-container text-primary text-xs rounded-md font-bold">Angular 18+</span>
+<span class="shimmer px-3 py-1 bg-surface-container text-primary text-xs rounded-md font-bold">FastAPI</span>
+<span class="shimmer px-3 py-1 bg-surface-container text-primary text-xs rounded-md font-bold">GCP</span>
+<span class="shimmer px-3 py-1 bg-surface-container text-primary text-xs rounded-md font-bold">Cloud Run</span>
+<span class="shimmer px-3 py-1 bg-surface-container text-primary text-xs rounded-md font-bold">Vertex AI</span>
+</div>
+</div>
+</div>
+<!-- 3. Full Stack Developer Intern | WhatBytes -->
+<div class="reveal group relative grid md:grid-cols-12 gap-8 p-10 rounded-2xl hover:bg-surface-container-highest transition-all duration-300 hover-lift active">
+<div class="md:col-span-3">
+<span class="text-on-surface-variant font-headline font-bold text-xl block">Nov 2024 - April 2025</span>
+<span class="text-on-surface-variant font-label text-sm uppercase tracking-widest flex items-center gap-2 mt-2">
+<span class="material-symbols-outlined text-sm">location_on</span> Remote
+                        </span>
+</div>
+<div class="md:col-span-9 space-y-4">
+<h3 class="text-2xl font-headline font-bold text-primary group-hover:text-primary-fixed transition-colors">Full Stack Developer Intern</h3>
+<span class="text-on-surface-variant text-lg block -mt-2">WhatBytes</span>
+<ul class="text-on-surface-variant leading-relaxed text-lg list-disc list-outside ml-5 space-y-2">
+<li class="">Built scalable, responsive UIs using Next.js and Vue.js across multiple projects.</li>
+<li class="">Developed a GPT-style chat interface for Pascal AI and a dynamic LLM-switching Super Admin dashboard for Clik.ai.</li>
+<li class="">Integrated WebRTC with ML models in Vitalsign.ai for real-time emotion and posture tracking.</li>
+<li class="">Implemented Narwal’s frontend with Vue.js, seamlessly connecting to Fastify and RedShift.</li>
+</ul>
+<div class="flex flex-wrap gap-2 pt-2">
+<span class="shimmer px-3 py-1 bg-surface-container text-primary text-xs rounded-md font-bold">Next.js</span>
+<span class="shimmer px-3 py-1 bg-surface-container text-primary text-xs rounded-md font-bold">Vue.js</span>
+<span class="shimmer px-3 py-1 bg-surface-container text-primary text-xs rounded-md font-bold">WebRTC</span>
+<span class="shimmer px-3 py-1 bg-surface-container text-primary text-xs rounded-md font-bold">Fastify</span>
+<span class="shimmer px-3 py-1 bg-surface-container text-primary text-xs rounded-md font-bold">RedShift</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Projects Section (Bento Grid) -->
+<section class="py-32 px-8 max-w-7xl mx-auto" id="projects">
+<div class="mb-16 text-center reveal active">
+<span class="text-tertiary font-headline font-bold tracking-widest uppercase text-sm block mb-2">Portfolio</span>
+<h2 class="text-5xl font-headline font-bold">Architectural Works</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6 auto-rows-[300px]">
+<!-- Project 1: EduGlow -->
+<div class="reveal md:col-span-8 md:row-span-2 group overflow-hidden rounded-2xl bg-surface-container-low border border-outline-variant/10 relative hover-lift active">
+<img alt="Education platform interface" class="project-img-reveal w-full h-full object-cover opacity-40 group-hover:scale-105 transition-all duration-1000 active" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOeNOkASDzg8SjO7lJheZo5BBANoBbOohgI_QFNCS3s45b2Z6PYyIPnkq0QHe0E7n-FbwpwSySAg6Q4EwU-VcaAbjF1theCNTNp6nT4rJo1BccSbTTVHUPjC652z2Irn26VVQVW7F8jAlPS8km2-sYi9aIAYJOB_Ok-8PEmfp_ONUHNfN_HngufVO0smPN8vVfobBQf8xu5faUfJSxA4LE2QWcB6-5wywzGkPLhzRm0ejhP3BC75ViMW_2aqqAriq2oqoN-2-zeKM">
+<div class="absolute inset-0 bg-gradient-to-t from-surface-dim via-surface-dim/40 to-transparent flex flex-col justify-end p-12">
+<div class="space-y-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary">monitoring</span>
+<span class="text-on-tertiary-container bg-tertiary/20 px-2 py-0.5 rounded text-xs font-bold">LIVE MONITORING</span>
+</div>
+<h3 class="text-4xl font-headline font-bold text-on-surface">EduGlow</h3>
+<p class="text-on-surface-variant max-w-lg">A full-stack MERN ed-tech platform featuring real-time server monitoring with Prometheus and Grafana dashboards.</p>
+<div class="flex gap-3">
+<span class="shimmer text-sm font-bold px-3 py-1 bg-primary/10 text-primary rounded-full">MongoDB</span>
+<span class="shimmer text-sm font-bold px-3 py-1 bg-primary/10 text-primary rounded-full">Express</span>
+<span class="shimmer text-sm font-bold px-3 py-1 bg-primary/10 text-primary rounded-full">Prometheus</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Project 2: ShareLinks -->
+<div class="reveal md:col-span-4 md:row-span-1 group overflow-hidden rounded-2xl bg-surface-container-low border border-outline-variant/10 relative hover-lift active" style="transition-delay: 100ms;">
+<div class="absolute inset-0 p-8 flex flex-col justify-between">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-3xl text-primary group-hover:scale-110 transition-transform">link</span>
+<span class="material-symbols-outlined text-on-surface-variant hover:text-primary cursor-pointer transition-colors">arrow_outward</span>
+</div>
+<div>
+<h3 class="text-2xl font-headline font-bold text-on-surface mb-2 group-hover:text-primary transition-colors">ShareLinks</h3>
+<p class="text-on-surface-variant text-sm line-clamp-2">Optimized link management and sharing hub built with Next.js and MongoDB.</p>
+</div>
+</div>
+</div>
+<!-- Technical Snippet / CTA -->
+<div class="reveal md:col-span-4 md:row-span-1 group overflow-hidden rounded-2xl bg-gradient-to-br from-primary-container/20 to-surface-container-highest border border-outline-variant/10 p-8 flex flex-col justify-center text-center hover-lift active" style="transition-delay: 200ms;">
+<span class="material-symbols-outlined text-5xl text-primary mb-4 mx-auto group-hover:rotate-12 transition-transform">code</span>
+<h3 class="text-xl font-headline font-bold text-on-surface">More on GitHub</h3>
+<p class="text-sm text-on-surface-variant mb-6">Explore 20+ public repositories featuring cloud architectures.</p>
+<a class="magnetic-btn text-primary font-bold hover:underline inline-flex items-center justify-center gap-1" href="#">
+                    View Repositories <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+</section>
+<!-- Skills Section -->
+<section class="py-32 bg-surface-container-low/50" id="skills">
+<div class="max-w-7xl mx-auto px-8">
+<div class="grid md:grid-cols-2 gap-16">
+<div class="reveal active">
+<span class="text-primary font-headline font-bold tracking-widest uppercase text-sm block mb-2">The Stack</span>
+<h2 class="text-5xl font-headline font-bold mb-8">Engineering Arsenal</h2>
+<p class="text-on-surface-variant text-lg leading-relaxed mb-12">
+                        My technical toolkit is focused on building scalable, resilient applications that bridge the gap between human experience and machine efficiency.
+                    </p>
+<div class="space-y-8">
+<div class="p-6 rounded-xl bg-surface-container border-l-4 border-tertiary hover-lift">
+<h4 class="text-on-surface font-headline font-bold mb-4 uppercase tracking-tighter">Certifications</h4>
+<ul class="space-y-3">
+<li class="flex items-center gap-3 text-on-surface-variant">
+<span class="material-symbols-outlined text-[#2962ff]">check_circle</span>
+                                    Google Cloud Associate Cloud Engineer
+                                </li>
+<li class="flex items-center gap-3 text-on-surface-variant">
+<span class="material-symbols-outlined text-[#2962ff]">check_circle</span>
+                                    Google Cloud Digital Leader
+                                </li>
+<li class="flex items-center gap-3 text-on-surface-variant">
+<span class="material-symbols-outlined text-[#2962ff]">check_circle</span>
+                                    Google Professional Data Practitioner
+                                </li>
+<li class="flex items-center gap-3 text-on-surface-variant">
+<span class="material-symbols-outlined text-[#2962ff]">check_circle</span>
+                                    AWS Academy Graduate
+                                </li>
+</ul>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<!-- Programming -->
+<div class="reveal p-6 rounded-xl bg-surface-container-highest/30 space-y-4 hover-lift active" style="transition-delay: 100ms;">
+<span class="text-secondary font-label font-bold text-xs uppercase tracking-widest">Programming</span>
+<div class="flex flex-wrap gap-2">
+<span class="shimmer px-3 py-1 bg-surface-container-highest text-sm rounded">C++</span>
+<span class="shimmer px-3 py-1 bg-surface-container-highest text-sm rounded">JavaScript</span>
+<span class="shimmer px-3 py-1 bg-surface-container-highest text-sm rounded">Python</span>
+<span class="shimmer px-3 py-1 bg-surface-container-highest text-sm rounded">TypeScript</span>
+</div>
+</div>
+<!-- Frameworks -->
+<div class="reveal p-6 rounded-xl bg-surface-container-highest/30 space-y-4 hover-lift active" style="transition-delay: 200ms;">
+<span class="text-secondary font-label font-bold text-xs uppercase tracking-widest">Frameworks</span>
+<div class="flex flex-wrap gap-2">
+<span class="shimmer px-3 py-1 bg-surface-container-highest text-sm rounded">React</span>
+<span class="shimmer px-3 py-1 bg-surface-container-highest text-sm rounded">Next.js</span>
+<span class="shimmer px-3 py-1 bg-surface-container-highest text-sm rounded">Angular</span>
+<span class="shimmer px-3 py-1 bg-surface-container-highest text-sm rounded">FastAPI</span>
+</div>
+</div>
+<!-- Cloud -->
+<div class="reveal p-6 rounded-xl bg-surface-container-highest/30 space-y-4 hover-lift active" style="transition-delay: 300ms;">
+<span class="text-secondary font-label font-bold text-xs uppercase tracking-widest">Cloud</span>
+<div class="flex flex-wrap gap-2">
+<span class="shimmer px-3 py-1 bg-surface-container-highest text-sm rounded">GCP</span>
+<span class="shimmer px-3 py-1 bg-surface-container-highest text-sm rounded">AWS</span>
+<span class="shimmer px-3 py-1 bg-surface-container-highest text-sm rounded">Firebase</span>
+</div>
+</div>
+<!-- Tools -->
+<div class="reveal p-6 rounded-xl bg-surface-container-highest/30 space-y-4 hover-lift active" style="transition-delay: 400ms;">
+<span class="text-secondary font-label font-bold text-xs uppercase tracking-widest">Tools</span>
+<div class="flex flex-wrap gap-2">
+<span class="shimmer px-3 py-1 bg-surface-container-highest text-sm rounded">Docker</span>
+<span class="shimmer px-3 py-1 bg-surface-container-highest text-sm rounded">Figma</span>
+<span class="shimmer px-3 py-1 bg-surface-container-highest text-sm rounded">Git</span>
+<span class="shimmer px-3 py-1 bg-surface-container-highest text-sm rounded">Prometheus</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Education -->
+<section class="py-32 px-8 max-w-7xl mx-auto" id="education">
+<div class="grid md:grid-cols-12 gap-12 items-center">
+<div class="md:col-span-5 reveal active">
+<h2 class="text-4xl font-headline font-bold text-on-surface mb-6">Academic Foundation</h2>
+<div class="p-8 rounded-2xl bg-surface-container-low border border-outline-variant/10 relative overflow-hidden hover-lift">
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full blur-3xl -mr-16 -mt-16"></div>
+<h3 class="text-2xl font-headline font-bold text-primary mb-1">B.Tech in Computer Science</h3>
+<p class="text-on-surface text-lg mb-4">G.L. Bajaj Institute of Technology</p>
+<div class="flex items-center gap-2 text-on-surface-variant font-label text-sm uppercase tracking-widest">
+<span class="material-symbols-outlined text-sm">calendar_today</span>
+                        CLASS OF 2025
+                    </div>
+</div>
+</div>
+<div class="md:col-span-7 reveal active" style="transition-delay: 200ms;">
+<div class="aspect-video rounded-2xl overflow-hidden shadow-2xl hover-lift">
+<img alt="University campus architecture" class="project-img-reveal w-full h-full object-cover active" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBpK0yabU46Vc0BKzxrv5RZsjjzVa7FXZCosH-UnAnR0crFR9Fw6UK5GQwMWOJu6yffqP_vtnSU-o2oifOdwjwa_QSc9BEZx1bwRe_FO49NeTwTYgLz1PRCvSpWqMUJBW04XUud_OK0On7J7Yic12aMrHaX1gjG5PVRi5aaz9ZJKQFTKdZysyHePKygVLjXM8zgnxcqTdtSsYtmLE67y748WdXZKT7mA4rW8efdvLJ07RfEH1YanmZBl9ppmIMFOxtVd2HWNZCNgVg">
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section class="py-32 bg-surface-container-low/50" id="contact">
+<div class="max-w-3xl mx-auto px-8 text-center space-y-8 reveal active">
+<h2 class="text-5xl font-headline font-bold">Let's build something <span class="text-gradient">remarkable</span>.</h2>
+<p class="text-on-surface-variant text-lg">Currently seeking full-time opportunities in Data Engineering, Cloud Engineering, Generative AI, and Full-Stack Development.
+</p>
+<div class="flex flex-col sm:flex-row justify-center gap-6 pt-8">
+<a class="magnetic-btn bg-gradient-to-br from-primary to-primary-container text-on-primary-fixed px-10 py-5 rounded-lg font-headline font-bold flex items-center justify-center gap-2 transition-all hover:-translate-y-1 shadow-xl shadow-primary/20" href="mailto:nikhil00403@gmail.com">
+                    Send an Email
+                    <span class="material-symbols-outlined">mail</span>
+</a>
+<!-- <a class="magnetic-btn border border-outline-variant/20 hover:bg-surface-container-highest px-10 py-5 rounded-lg font-headline font-bold flex items-center justify-center gap-2 transition-all hover:-translate-y-1" href="#">
+                    Book a Chat
+                    <span class="material-symbols-outlined">schedule</span>
+</a> -->
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#0d1322] w-full py-12 border-t border-[#434656]/15 relative z-10">
+<div class="flex flex-col md:flex-row justify-between items-center px-12 max-w-7xl mx-auto">
+<div class="mb-6 md:mb-0">
+<span class="text-lg font-bold text-[#dde2f8] font-headline">NIKHIL SINGH</span>
+<p class="text-[#dde2f8]/50 font-body text-sm mt-1">© 2026 Nikhil Singh. Built with Architectural Precision.</p>
+</div>
+<div class="flex gap-8"><a class="text-[#dde2f8]/50 hover:text-[#66dd8b] transition-colors text-sm font-label" href="#home">Home</a><a class="text-[#dde2f8]/50 hover:text-[#66dd8b] transition-colors text-sm font-label" href="#experience">Experience</a><a class="text-[#dde2f8]/50 hover:text-[#66dd8b] transition-colors text-sm font-label" href="#projects">Projects</a></div>
+</div>
+</footer>
+<script>
+    // Intersection Observer for scroll animations
+    const observerOptions = {
+        threshold: 0.15,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                // Also trigger child image reveals if they exist
+                const imgReveal = entry.target.querySelector('.project-img-reveal');
+                if (imgReveal) imgReveal.classList.add('active');
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    document.querySelectorAll('.project-img-reveal').forEach(el => observer.observe(el));
+
+    // Active nav highlight on scroll
+    const navLinks = document.querySelectorAll('.nav-link');
+    const sections = ['home', 'experience', 'projects', 'skills', 'education', 'contact'];
+
+    function setActiveNav(id) {
+        navLinks.forEach(link => {
+            const isActive = link.dataset.section === id;
+            link.classList.toggle('text-[#b6c4ff]', isActive);
+            link.classList.toggle('border-b-2', isActive);
+            link.classList.toggle('border-[#2962ff]', isActive);
+            link.classList.toggle('pb-1', isActive);
+            link.classList.toggle('text-[#dde2f8]/70', !isActive);
+        });
+    }
+
+    function updateActiveNav() {
+        const trigger = window.scrollY + window.innerHeight * 0.25;
+        let current = 'home';
+        for (const id of sections) {
+            const el = document.getElementById(id);
+            if (el && el.offsetTop <= trigger) {
+                current = id;
+            }
+        }
+        // education has no nav link — map it to skills
+        setActiveNav(current === 'education' ? 'skills' : current);
+    }
+
+    window.addEventListener('scroll', updateActiveNav, { passive: true });
+    updateActiveNav();
+
+    // Magnetic button effect implementation
+    document.querySelectorAll('.magnetic-btn').forEach(btn => {
+        btn.addEventListener('mousemove', (e) => {
+            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+            const rect = btn.getBoundingClientRect();
+            const x = e.clientX - rect.left - rect.width / 2;
+            const y = e.clientY - rect.top - rect.height / 2;
+            btn.style.transform = `translate(${x * 0.2}px, ${y * 0.2}px) scale(1.02)`;
+        });
+        btn.addEventListener('mouseleave', () => {
+            btn.style.transform = '';
+        });
+    });
+</script>
+
+
+
+
+</body></html>
